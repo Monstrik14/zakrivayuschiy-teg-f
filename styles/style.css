@@ -17,4 +17,329 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font, Georgia, sans-serif);
+  font-variation-settings: "wght" var(--main-text-font-weight);
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  background-size: cover;
+  background-attachment: fixed;
+  background-image: var(--bg-gradient);
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid var(--accent-color);
+  background-color: var(--bg-color);
+  margin: 100px auto;
+  padding-block: 135px 23px;
+  inline-size: var(--section-width);
+  margin-block-end: 101px;
+}
+
+.header__title {
+  font-family: var(--accent-font);
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+}
+
+.header__subtitle {
+  font-family: var(--accent-font);
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
+  margin-block-start: 20px;
+  margin-block-end: 25px;
+  text-transform: uppercase;
+}
+
+.theme-menu__list {
+  position: relative;
+  padding-inline-start: 20px;
+  font-family: var(--accent-font);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.theme-menu__button {
+  position: relative;
+  border: none;
+  background-color: transparent;
+  font-size: 14px;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.card {
+  margin: 0 auto;
+  inline-size: var(--section-width);
+  border: 2px solid currentColor;
+  background-color: var(--bg-color);
+}
+
+.cards__list {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.card__title {
+  font-variation-settings: "wght" var(--title-font-weight);
+  font-size: 18px;
+  background-color: var(--bg-color);
+  padding: 1px 0 5px 7px;
+  border: 2px solid var(--accent-color);
+}
+
+.card-pictures__section {
+  position: relative;
+}
+
+.card__image {
+  width: 100%;
+  height: 100%;
+  display: block;
+  border: 2px solid var(--accent-color);
+}
+
+.card__watermark {
+  mix-blend-mode: hard-light;
+  position: absolute;
+  font-size: 14px;
+  font-family: var(--accent-font);
+  z-index: 1;
+  top: 25px;
+  right: 25px;
+  text-shadow:
+    -1px 0px var(--bg-color),
+    0 1px var(--bg-color),
+    1px 1px var(--bg-color),
+    0 -1px var(--bg-color);
+}
+
+@supports ((text-stroke: 1px #000000) or (-webkit-text-stroke: 1px #000000)) {
+  .card__watermark {
+    -webkit-text-stroke: 1px var(--bg-color);
+    text-stroke: 1px var(--bg-color);
+    text-shadow: none;
+  }
+}
+
+.card-text__section {
+  background-color: var(--bg-color);
+  padding: 25px;
+  font-size: 18px;
+  font-weight: var(--main-text-font-weight);
+}
+
+.paragraph {
+  font-variation-settings: "wght" var(--main-text-font-weight);
+  font-size: 18px;
+}
+
+.paragraph:not(:last-of-type) {
+  margin-block-end: 25px;
+}
+
+.paragraph:last-of-type {
+  margin-block-end: 25px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: end;
+  align-items: center;
+}
+
+.card__icon-button {
+  background-color: transparent;
+  cursor: pointer;
+  block-size: 38px;
+  inline-size: 53px;
+  border: 2px solid transparent;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__like-button {
+  font-size: 14px;
+  font-family: var(--accent-color);
+  font-weight: var(--main-text-font-weight);
+  background-color: var(--bg-color);
+  position: relative;
+  min-width: 130px;
+  min-height: 38px;
+  font-family: var(--accent-font);
+  cursor: pointer;
+  border: 2px solid var(--accent-color);
+}
+
+.hover-animation:focus {
+  outline: none;
+}
+
+.hover-animation:focus-visible {
+  outline: none;
+  box-shadow: 2px 2px 0 var(--accent-color);
+}
+
+.keepsake-button {
+  position: relative;
+  display: block;
+  margin: 40px auto;
+  padding-block: 15px;
+  padding-inline: 17px;
+  border: 2px solid currentColor;
+  cursor: pointer;
+  line-height: 12.6px;
+  font-family: var(--accent-font);
+  font-weight: var(--main-text-font-weight);
+  font-size: 14px;
+  background-color: var(--bg-color);
+  margin-block-start: 43px;
+}
+
+.floppy {
+  color: var(--accent-color);
+  block-size: 21px;
+}
+
+.keepsake-button__text {
+  position: relative;
+  z-index: 1;
+  color: var(--accent-color);
+}
+
+.dialog {
+  background-color: var(--bg-color);
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  font-weight: var(--main-text-font-weight);
+  font-size: 14px;
+  padding: 30px;
+  inline-size: 354px;
+  margin-block-end: 386px;
+}
+
+.dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.6);
+  backdrop-filter: brightness(70%);
+}
+
+.dialog[open] .dialog__text {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.floppy-dialog {
+  block-size: 38px;
+  margin-block-end: 30px;
+}
+
+.dialog__paragraph {
+  max-inline-size: 237px;
+  text-transform: uppercase;
+  line-height: 21px;
+  margin-block-end: 30px;
+}
+
+.ok-button {
+  padding-block: 12px;
+  inline-size: 100%;
+  border: 2px solid var(--accent-color);
+  margin: 0;
+  background-color: var(--bg-color);
+}
+
+.ok-button__text {
+  text-transform: uppercase;
+  font-family: var(--accent-font);
+  font-weight: var(--main-text-font-weight);
+  font-size: 14px;
+}
+
+@media (width <= 375px) {
+  .header {
+    padding-block-start: 119px;
+  }
+
+  .paragraph:not(:last-of-type) {
+    margin-block-end: 23px;
+  }
+
+  .paragraph:last-of-type {
+    margin-block-end: 21px;
+  }
+
+  .dialog {
+    margin-block-end: 143px;
+    padding-inline: 42px;
+  }
+
+  .dialog__paragraph {
+    inline-size: 196px;
+  }
+
+  .keepsake-button {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-block-start: 52px;
+    padding-block: 17px;
+    gap: 9px;
+    padding-block-start: 10px;
+  }
+
+  .floppy {
+    max-width: 28px;
+    block-size: 28px;
+  }
+}
+
+.filter-contrast {
+  filter: contrast(40%);
+}
+
+.filter-blur {
+  filter: blur(70%);
+}
+
+.filter-opacity {
+  filter: opacity(0.6);
+}
+
+.filter-grayscale {
+  filter: grauscale(0.5);
+}
+
+.filter-saturate {
+  filter: saturate(150%);
+}
+
+.filter-hue-rotate {
+  filter: hue-rotate(-120deg);
+}
+
+.filter-multiple {
+  filter: sepia(95%) contrast(14%) blur(50%);
 }
