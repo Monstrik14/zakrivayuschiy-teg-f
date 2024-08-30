@@ -180,16 +180,23 @@
 }
 
 .card__like-button {
+  position: relative;
   font-size: 14px;
   font-family: var(--accent-color);
   font-weight: var(--main-text-font-weight);
-  background-color: var(--bg-color);
-  position: relative;
+  background-color: var(--bg-color); 
   min-width: 130px;
   min-height: 38px;
   font-family: var(--accent-font);
   cursor: pointer;
   border: 2px solid var(--accent-color);
+}
+
+.button__text {
+  position: relative;
+  mix-blend-mode: difference;
+  color: var(--button-bg); 
+  z-index: 1;
 }
 
 .hover-animation:focus {
