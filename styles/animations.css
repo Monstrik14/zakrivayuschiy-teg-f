@@ -12,3 +12,131 @@
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -10px;
+  animation: arrow 0.5s infinite ease-in-out alternate;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid currentColor;
+  inset: 0;
+  transform-origin: left;
+  transform: scaleX(0);
+  transition: 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}
+
+.hover-animation::after {
+  content: "";
+  position: absolute;
+  background-color: var(--accent-color);
+  transition: 0.5s ease-in-out;
+  inset: 0;
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+.hover-animation:hover::after {
+  transform: scaleX(1);
+}
+
+.card__icon-button:focus-visible {
+  border: 2px solid var(--accent-color);
+  transition: 0.3s ease;
+}
+
+.sparks {
+  opacity: 0;
+}
+
+.main-body {
+  transition: 0.3s linear;
+}
+
+.core {
+  transition: 0.03s linear;
+}
+
+.contour {
+  transition: 0.1s linear;
+}
+
+.like-icon:hover .main-body {
+  transition: 0.3s linear 0.05s;
+  fill: var(--accent-color);
+}
+
+.like-icon:hover .core {
+  transition: 0.3s linear 0.03s;
+  fill: var(--accent-color);
+}
+
+.like-icon:active .main-body {
+  transition: 0.3s linear 0.05s;
+  fill: var(--heart-color);
+}
+
+.like-icon:active .core {
+  transition: 0.3s linear 0.03s;
+  fill: var(--heart-color);
+}
+
+.like-icon.is-liked .main-body {
+  transition: 0.3s linear 0.05s;
+  fill: var(--heart-color);
+}
+
+.like-icon.is-liked .core {
+  transition: 0.3s linear 0.03s;
+  fill: var(--heart-color);
+}
+
+.like-icon.is-liked .contour {
+  transition: 0.3s linear 0.06s;
+  fill: var(--heart-color); 
+}
+
+.like-icon.is-liked .heart {
+  animation: heart 0.3s ease-in 0.1s alternate;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation: sparks 0.3s ease-in 0.3s alternate;
+}
+
+@keyframes arrow {
+  from {
+    left: -14px;
+  }
+
+  to {
+    left: -10px;
+  }
+}
+
+@keyframes sparks {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes heart {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.5);
+  }
+}
