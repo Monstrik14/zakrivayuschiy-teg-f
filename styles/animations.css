@@ -13,23 +13,6 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
-.theme-menu__button:disabled::before {
-  content: "▶";
-  position: absolute;
-  left: -10px;
-  animation: arrow 0.5s infinite ease-in-out alternate;
-}
-
-.theme-menu__button::after {
-  content: "";
-  position: absolute;
-  border-bottom: 1px solid currentColor;
-  inset: 0;
-  transform-origin: left;
-  transform: scaleX(0);
-  transition: 0.3s ease;
-}
-
 .theme-menu__button:focus-visible::after {
   transform: scaleX(1);
 }
@@ -101,7 +84,7 @@
 
 .like-icon.is-liked .contour {
   transition: 0.3s linear 0.06s;
-  fill: var(--heart-color); 
+  fill: var(--heart-color);
 }
 
 .like-icon.is-liked .heart {
