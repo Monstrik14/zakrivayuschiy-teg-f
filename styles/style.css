@@ -36,12 +36,12 @@
   margin: 100px auto;
   padding-block: 135px 23px;
   inline-size: var(--section-width);
-  margin-block-end: 101px;
 }
 
 .header__title {
   font-family: var(--accent-font);
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+ 
 }
 
 .header__subtitle {
@@ -68,6 +68,23 @@
   font-size: 14px;
   cursor: pointer;
   text-transform: uppercase;
+  transition: 0.3s ease;
+}
+
+.theme-menu__button:disabled::before {
+  content: "▶";
+  position: absolute;
+  left: -10px;
+  animation: arrow 0.5s infinite ease-in-out alternate;
+}
+
+.theme-menu__button::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid currentColor;
+  inset: 0;
+  transform-origin: left;
+  transform: scaleX(0);
   transition: 0.3s ease;
 }
 
@@ -103,8 +120,11 @@
   font-variation-settings: "wght" var(--title-font-weight);
   font-size: 18px;
   background-color: var(--bg-color);
-  padding: 1px 0 5px 7px;
-  border: 2px solid var(--accent-color);
+  padding: 5px 8px;
+  line-height: 21.78px;
+  font-weight: var(--title-font-weight);
+  font-family: var(--main-font);
+  border-bottom: 2px solid var(--accent-color);
 }
 
 .card-pictures__section {
@@ -115,7 +135,6 @@
   width: 100%;
   height: 100%;
   display: block;
-  border: 2px solid var(--accent-color);
 }
 
 .card__watermark {
@@ -146,19 +165,23 @@
   padding: 25px;
   font-size: 18px;
   font-weight: var(--main-text-font-weight);
+  border-top: 2px solid var(--accent-color);
 }
 
 .paragraph {
   font-variation-settings: "wght" var(--main-text-font-weight);
   font-size: 18px;
+  font-weight: var(--main-text-font-weight);
+  line-height: 21px;
+  font-family: var(--main-font);
 }
 
 .paragraph:not(:last-of-type) {
-  margin-block-end: 25px;
+  margin-block-end: 29px;
 }
 
 .paragraph:last-of-type {
-  margin-block-end: 25px;
+  margin-block-end: 23px;
 }
 
 .buttons {
@@ -212,7 +235,7 @@
   position: relative;
   display: block;
   margin: 40px auto;
-  padding-block: 15px;
+  padding-block: 17px;
   padding-inline: 17px;
   border: 2px solid currentColor;
   cursor: pointer;
@@ -221,18 +244,22 @@
   font-weight: var(--main-text-font-weight);
   font-size: 14px;
   background-color: var(--bg-color);
-  margin-block-start: 43px;
+  margin-block-start: 42px;
 }
 
 .floppy {
-  color: var(--accent-color);
+  position: relative;
   block-size: 21px;
+  color: var(--bg-color);
+  mix-blend-mode: difference;
+  z-index: 1;
 }
 
 .keepsake-button__text {
   position: relative;
   z-index: 1;
-  color: var(--accent-color);
+  color: var(--bg-color);
+  mix-blend-mode: difference;
 }
 
 .dialog {
@@ -243,16 +270,15 @@
   font-size: 14px;
   padding: 30px;
   inline-size: 354px;
-  margin-block-end: 386px;
 }
 
 .dialog::backdrop {
-  background-color: rgb(0 0 0 / 0.6);
-  backdrop-filter: brightness(70%);
+  background-color: rgb(0 0 0 / 0.75)
 }
 
 .dialog[open] .dialog__text {
   display: flex;
+  justify-self: center;
   align-items: center;
   gap: 20px;
 }
@@ -267,6 +293,9 @@
   text-transform: uppercase;
   line-height: 21px;
   margin-block-end: 30px;
+  font-size: 14px;
+  font-weight: var(--main-text-font-weight);
+  font-family: var(--accent-font);
 }
 
 .ok-button {
@@ -286,15 +315,15 @@
 
 @media (width <= 375px) {
   .header {
-    padding-block-start: 119px;
+    padding-block-start: 120px;
   }
 
   .paragraph:not(:last-of-type) {
-    margin-block-end: 23px;
+    margin-block-end: 28px;
   }
 
   .paragraph:last-of-type {
-    margin-block-end: 21px;
+    margin-block-end: 23px;
   }
 
   .dialog {
@@ -312,9 +341,9 @@
     justify-content: center;
     align-items: center;
     margin-block-start: 52px;
-    padding-block: 17px;
+    padding-block: 15px;
+    padding-inline: 21px;
     gap: 9px;
-    padding-block-start: 10px;
   }
 
   .floppy {
