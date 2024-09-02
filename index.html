@@ -608,16 +608,14 @@
         </svg>
         <p class="dialog__paragraph">Вставьте дискету, чтобы продолжить</p>
       </div>
-      <form>
-        <button
-          type="button"
-          class="button ok-button"
-          onclick="window['dialog'].close()"
-          aria-controls="dialog"
-        >
-          <span class="ok-button__text">Ok</span>
-        </button>
-      </form>
+      <button
+        type="button"
+        class="button ok-button hover-animation"
+        onclick="window['dialog'].close()"
+        aria-controls="dialog"
+      >
+        <span class="ok-button__text">Ok</span>
+      </button>
     </dialog>
     <script src="./scripts/like.js"></script>
   </body>
