@@ -47,6 +47,14 @@
   text-decoration: none;
 }
 
+.logo-link:hover {
+  text-decoration: none;
+}
+
+.logo-link:focus {
+  display: none;
+}
+
 .header__subtitle {
   font-family: var(--accent-font);
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
@@ -242,18 +250,18 @@
   padding-inline: 17px;
   border: 2px solid currentColor;
   cursor: pointer;
-  line-height: 12.6px;
+  background-color: var(--bg-color);
+  margin-block-start: 42px;
   font-family: var(--accent-font);
   font-weight: var(--main-text-font-weight);
   font-size: 14px;
-  background-color: var(--bg-color);
-  margin-block-start: 42px;
+  line-height: 12.6px;
 }
 
 .floppy {
   position: relative;
   block-size: 21px;
-  color: var(--bg-color);
+  color: var(--button-bg);
   mix-blend-mode: difference;
   z-index: 1;
 }
@@ -261,8 +269,8 @@
 .keepsake-button__text {
   position: relative;
   z-index: 1;
-  color: var(--bg-color);
-  mix-blend-mode: difference;
+  color: var(--button-bg);
+  mix-blend-mode: difference; 
 }
 
 .dialog {
@@ -302,18 +310,24 @@
 }
 
 .ok-button {
+  position: relative;
   padding-block: 12px;
   inline-size: 100%;
   border: 2px solid var(--accent-color);
   margin: 0;
   background-color: var(--bg-color);
+  cursor: pointer;
 }
 
 .ok-button__text {
+  position: relative;
   text-transform: uppercase;
   font-family: var(--accent-font);
   font-weight: var(--main-text-font-weight);
   font-size: 14px;
+  mix-blend-mode: difference;
+  z-index: 1;
+  color: var(--button-bg)
 }
 
 @media (width <= 375px) {
